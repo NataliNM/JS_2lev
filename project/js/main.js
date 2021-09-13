@@ -36,8 +36,10 @@ class GoodsItem {
     }
 }
 
-//класс GoodsList - возвращает список товаров, fetchGood - метод для заполнения списка, 
-//render - метод для вывода списка товаров на страницу
+//класс GoodsList - возвращает список товаров, 
+//fetchGood - метод для заполнения списка, 
+//render - метод для вывода списка товаров на страницу,
+//sumGoods - метод суммирования стоимости всех товаров
 class GoodsList {
     constructor() {
         this.goods = [];
@@ -58,6 +60,14 @@ class GoodsList {
         });
         document.querySelector('.products').innerHTML = listHtml;
 
+    }
+    sumGoods() {
+        const sumPriceGoods = this.goods.reduce((acc, item) => 
+        {
+            acc+=item.price;
+            return acc
+        }, 0)
+      console.log(sumPriceGoods)
     }
 }
 
@@ -86,3 +96,4 @@ class ItemsBasketGoods {
 const list = new GoodsList();
 list.fetchGoods();
 list.render();
+list.sumGoods();
