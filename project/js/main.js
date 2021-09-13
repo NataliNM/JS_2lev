@@ -9,7 +9,7 @@ const renderProduct = (title, price) =>
     `<div class="product-item">
             <img src="#" alt="img_product_item" class="img_product_item">
             <h3 class="title_product_item">${title}</h3>
-            <p class="price_product_item">${price}</p>
+            <p class="price_product_item">Стоимость: ${price}</p>
             <button class="by-btn">Добавить</button>
           </div>`;
 
